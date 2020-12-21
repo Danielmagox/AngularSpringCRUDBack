@@ -32,6 +32,10 @@ public class Controlador {
 	public Persona listarId(@PathVariable("id")int id) {
 		return service.listarId(id);
 	}
+	@GetMapping({"/sueldos-suma"})
+	public Float sumarSueldos() {
+		return service.sumarSueldos();
+	}
 	@PutMapping(path = {"/{id}"})
 	public Persona editar(@RequestBody Persona p, @PathVariable("id") int id) {
 		p.setId(id);

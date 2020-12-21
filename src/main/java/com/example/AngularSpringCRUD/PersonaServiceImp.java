@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 public class PersonaServiceImp implements PersonaService {
 	@Autowired
 	private PersonaRepositorio repositorio;
+	private float sum;
 	@Override
 	public List<Persona> listar() {
 		return repositorio.findAll();
@@ -37,5 +38,13 @@ public class PersonaServiceImp implements PersonaService {
 		}
 		return p;
 	}
+	@Override
+	public Float sumarSueldos() {
+		this.listar().forEach(persona -> {
+			sum += persona.getSueldo();
+					});
+		return sum;
+	}
+	
 
 }
