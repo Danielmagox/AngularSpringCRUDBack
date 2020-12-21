@@ -13,6 +13,8 @@ public class Persona {
 	private String name;
 	@Column
 	private String apellidos;
+	@Column
+	private Float sueldo;
 	
 	public int getId() {
 		return id;
@@ -31,6 +33,12 @@ public class Persona {
 	}
 	public void setApellidos(String apellidos) {
 		this.apellidos = apellidos;
+	}
+	public Float getSueldo() {
+		return sueldo;
+	}
+	public void setSueldo(Float sueldo) {
+		this.sueldo = sueldo;
 	}
 	
 }
