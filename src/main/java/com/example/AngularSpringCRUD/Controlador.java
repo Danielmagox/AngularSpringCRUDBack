@@ -2,6 +2,7 @@ package com.example.AngularSpringCRUD;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -35,5 +36,9 @@ public class Controlador {
 	public Persona editar(@RequestBody Persona p, @PathVariable("id") int id) {
 		p.setId(id);
 		return service.edit(p);
+	}
+	@DeleteMapping(path = {"/{id}"})
+	public Persona delete(@PathVariable("id") int id) {
+		return service.delete(id);
 	}
 }

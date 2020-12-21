@@ -31,8 +31,11 @@ public class PersonaServiceImp implements PersonaService {
 
 	@Override
 	public Persona delete(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		Persona p=repositorio.findById(id);
+		if(p!=null) {
+			repositorio.delete(p);
+		}
+		return p;
 	}
 
 }
