@@ -10,6 +10,7 @@ public class PersonaServiceImp implements PersonaService {
 	@Autowired
 	private PersonaRepositorio repositorio;
 	private float sum;
+	private float standardDeviation;
 	@Override
 	public List<Persona> listar() {
 		return repositorio.findAll();
@@ -50,6 +51,16 @@ public class PersonaServiceImp implements PersonaService {
 	@Override
 	public Float mediaSueldos() {
 		return this.sumarSueldos()/this.listar().size();
+	}
+
+	@Override
+	public Float desviacionTipica() {
+		standardDeviation = 0;
+		int lentgh = this.listar().size();
+		this.listar().forEach(persona -> {
+			standardDeviation += Math.pow((persona.getSueldo() - this.mediaSueldos()), 2);
+		});
+		return (float) Math.sqrt(standardDeviation/(lentgh-1));
 	}
 	
 

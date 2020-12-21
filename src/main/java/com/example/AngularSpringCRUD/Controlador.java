@@ -40,6 +40,10 @@ public class Controlador {
 	public Float mediaSueldos() {
 		return service.mediaSueldos();
 	}
+	@GetMapping({"/sueldos-desviacion"})
+	public Float desviacionSueldos() {
+		return service.desviacionTipica();
+	}
 	@PutMapping(path = {"/{id}"})
 	public Persona editar(@RequestBody Persona p, @PathVariable("id") int id) {
 		p.setId(id);
