@@ -8,5 +8,6 @@ public interface PersonaService {
 	Persona add(Persona p);
 	Persona edit(Persona p);
 	Float sumarSueldos();
+	Float mediaSueldos();
 	Persona delete(int id);
 }

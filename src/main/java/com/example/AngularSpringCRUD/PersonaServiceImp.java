@@ -40,10 +40,16 @@ public class PersonaServiceImp implements PersonaService {
 	}
 	@Override
 	public Float sumarSueldos() {
+		sum = 0;
 		this.listar().forEach(persona -> {
 			sum += persona.getSueldo();
 					});
 		return sum;
+	}
+
+	@Override
+	public Float mediaSueldos() {
+		return this.sumarSueldos()/this.listar().size();
 	}
 	
 
