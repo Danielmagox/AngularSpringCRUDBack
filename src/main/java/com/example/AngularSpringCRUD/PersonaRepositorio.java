@@ -1,7 +1,8 @@
 package com.example.AngularSpringCRUD;
 
-import org.springframework.data.repository.Repository;
 import java.util.List;
+
+import org.springframework.data.repository.Repository;
 
 @org.springframework.stereotype.Repository
 public interface PersonaRepositorio extends Repository<Persona, Integer> {

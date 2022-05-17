@@ -1,5 +1,8 @@
 package com.example.AngularSpringCRUD;
 
+import java.util.List;
+import java.io.*;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -10,8 +13,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RestController
@@ -32,18 +33,11 @@ public class Controlador {
 	public Persona listarId(@PathVariable("id")int id) {
 		return service.listarId(id);
 	}
-	@GetMapping({"/sueldos-suma"})
-	public Float sumarSueldos() {
-		return service.sumarSueldos();
+	@GetMapping(path = {"/hola"})
+	public void listarId() {
+		System.out.println("Hola");
 	}
-	@GetMapping({"/sueldos-media"})
-	public Float mediaSueldos() {
-		return service.mediaSueldos();
-	}
-	@GetMapping({"/sueldos-desviacion"})
-	public Float desviacionSueldos() {
-		return service.desviacionTipica();
-	}
+	
 	@PutMapping(path = {"/{id}"})
 	public Persona editar(@RequestBody Persona p, @PathVariable("id") int id) {
 		p.setId(id);

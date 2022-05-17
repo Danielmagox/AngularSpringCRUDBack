@@ -1,6 +1,11 @@
 package com.example.AngularSpringCRUD;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "personas")
@@ -13,8 +18,6 @@ public class Persona {
 	private String name;
 	@Column
 	private String apellidos;
-	@Column
-	private Float sueldo;
 	
 	public int getId() {
 		return id;
@@ -33,12 +36,6 @@ public class Persona {
 	}
 	public void setApellidos(String apellidos) {
 		this.apellidos = apellidos;
-	}
-	public Float getSueldo() {
-		return sueldo;
-	}
-	public void setSueldo(Float sueldo) {
-		this.sueldo = sueldo;
 	}
 	
 }
